@@ -41,8 +41,8 @@ for sigma in sigma_values:
     # Calculate Shannon entropy
     shannon_entropy = -np.sum(prob_dist * np.log2(prob_dist))
     
-    # Normalize entropy to [0, 1] range
-    max_entropy = np.log2(len(prob_dist))
+    # Normalize entropy to [0, 1] range (max entropy = log2(n_bins))
+    max_entropy = np.log2(n_bins)
     normalized_entropy = shannon_entropy / max_entropy if max_entropy > 0 else 0
     
     # Compute final pairwise distances
